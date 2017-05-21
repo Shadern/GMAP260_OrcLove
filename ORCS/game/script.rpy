@@ -349,7 +349,7 @@ label punk_greeting_b_1:
 
             "We all have enough “orc stuff” on our plates already. Don’t you think?":
                 $ aff_bg += 2
-                bg "Right? We’ve all got lives and problems, and…urges. | How do they expect us to identify with their corporate agenda?"
+                bg "Right? We’ve all got lives and problems, and…urges. How do they expect us to identify with their corporate agenda?"
                 jump punk_greeting_b
 
             "Why did you make fun of me, then?":
@@ -399,7 +399,7 @@ label punk_greeting_b_2:
                 jump punk_greeting_b
 
             "Yeah, what a jerk. He can take that coffee and shove it up his orc butt.":
-                bg "…I guess? I’m not sure how that would work…"
+                bg "...I guess? I’m not sure how that would work..."
                 jump punk_greeting_b
 
     #--------------------------Wednesday----------------------------------------
@@ -444,9 +444,9 @@ label punk_greeting_b_2:
 label punk_greeting_b_3:
     #----------------------------Monday----------------------------------------
     if day == 'mon':
-        bg "You mean besides everyone? I guess if I had to pick one, it’d be Graag. Graag Prudish. She’s a huge kiss ass, but there’s something…else. Something very off that I can’t quite put my finger on it. My advice? Keep your distance."
+        bg "You mean besides everyone? I guess if I had to pick one, it’d be Graag. Graag Prudish. She’s a huge kiss ass, but there’s something..else. Something very off that I can’t quite put my finger on it. My advice? Keep your distance."
         menu:
-            bg "{cps=0}You mean besides everyone? I guess if I had to pick one, it’d be Graag. Graag Prudish. She’s a huge kiss ass, but there’s something…else. Something very off that I can’t quite put my finger on it. My advice? Keep your distance.{/cps}"
+            bg "{cps=0}You mean besides everyone? I guess if I had to pick one, it’d be Graag. Graag Prudish. She’s a huge kiss ass, but there’s something..else. Something very off that I can’t quite put my finger on it. My advice? Keep your distance.{/cps}"
 
             "Why should I trust you?":
                 $ aff_bg += 2
@@ -455,7 +455,7 @@ label punk_greeting_b_3:
 
             "Yikes, I’ll take your word for it.":
                 $ aff_bg += 1
-                bg "Be careful. Blind trust is how they get you. I could be lying to you right now…I’m kidding. You need to lighten up!"
+                bg "Be careful. Blind trust is how they get you. I could be lying to you right now..I’m kidding. You need to lighten up!"
                 jump punk_greeting_b
 
             "Are you sure you’re not just jealous?":
@@ -467,7 +467,7 @@ label punk_greeting_b_3:
         menu:
             bg "You mean like—you? I suppose they can be quite attractive. Sometimes. Why do you ask?"
 
-            "Just wondering. Apparently, we’re really good kissers—what with the human tongue and all.":
+            "Just wondering. Apparently, we’re really good kissers-what with the human tongue and all.":
                 $ aff_bg += 2
                 bg "Is that so? I guess I’ll believe it when I see it."
                 jump punk_greeting_b
@@ -502,12 +502,18 @@ label punk_greeting_b_3:
 
 label punk_greeting_end:
     if day == 'mon':
-        bg "Well, I should probably be getting back to it. Borug’s been on everybody’s ass about the big meeting on Wednesday—I almost threw up in my mouth thinking about it. See you around."
+        bg "Well, I should probably be getting back to it. Borug’s been on everybody’s ass about the big meeting on Wednesday..I almost threw up in my mouth thinking about it. See you around."
         $ day = 'wed'
+        $ punk_greeting_top_i = False
+        $ punk_greeting_top_ii = False
+        $ punk_greeting_top_iii = False
         jump cube_morn_1
     elif day == 'wed':
         bg "Well, this has been fun, but I’m all talked out. Hopefully you figure out what your job is between now and the party on Friday. Borug takes his birthday VERY seriously. See you around."
         $ day = 'fri'
+        $ punk_greeting_top_i = False
+        $ punk_greeting_top_ii = False
+        $ punk_greeting_top_iii = False
         jump cube_morn_1
     elif day == 'fri':
         bg "Anyway, I should probably get going so I can powder my nose before the party. That was a joke. See you soon."
