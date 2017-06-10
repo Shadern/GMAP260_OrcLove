@@ -199,12 +199,28 @@ style input:
 ##
 ## http://www.renpy.org/doc/html/screen_special.html#choice
 
+#shuffle code from: https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=21196
+init python:
+    shuffle_items = range(20)
+    
+    def shuffle_menu():
+        global shuffle_items
+        shuffle_items = range(20)
+        shuffle_items.sort(key=lambda x:renpy.random.random())
+        return
+        
+    def unshuffle_menu():
+        global shuffle_items
+        shuffle_items = range(20)
+        return
+
 screen choice(items):
     style_prefix "choice"
 
     vbox:
-        for i in items:
-            textbutton i.caption action i.action
+        for i in shuffle_items:
+            if i < len(items):
+                textbutton items[i].caption action items[i].action
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -289,13 +305,14 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
+        xpos 0.05
         yalign 0.5
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
+            #imagebutton atuo "title_start-01.png" action Start()
             textbutton _("Start") action Start()
 
         else:
@@ -306,7 +323,7 @@ screen navigation():
 
         textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        #textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
 

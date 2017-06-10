@@ -23,7 +23,7 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "0.08"
+define config.version = "0.082"
 
 
 ## Text that is placed on the game's about screen. To insert a blank line
@@ -60,7 +60,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "bensound-thejazzpiano.mp3"
 
 
 ## Transitions #################################################################
